@@ -8,12 +8,14 @@ let mailList = [
 let mailInput = document.querySelector("#mail-input");
 let btn = document.querySelector("#btn");
 let mailAccessStatus = document.querySelector("#mail-access-status");
+let isMailFound = false;
 
 btn.addEventListener("click", (e) => {
     e.preventDefault();
     for(let i = 0; i < mailList.length; i++){
         if( mailInput.value === mailList[i]){
             mailInput.value = "";
+            isMailFound = true;
             mailAccessStatus.textContent = "Access allowed!";
             break;
         }
@@ -22,4 +24,5 @@ btn.addEventListener("click", (e) => {
             mailAccessStatus.textContent = "Access denied!";
         }
     }
+    console.log(isMailFound);
 });
