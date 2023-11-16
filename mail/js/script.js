@@ -14,15 +14,17 @@ btn.addEventListener("click", (e) => {
     e.preventDefault();
     for(let i = 0; i < mailList.length; i++){
         if( mailInput.value === mailList[i]){
-            mailInput.value = "";
             isMailFound = true;
-            mailAccessStatus.textContent = "Access allowed!";
-            break;
-        }
-        else if( i === mailList.length - 1 && mailList[mailList.length - 1 ] !== mailInput.value ){
-            mailInput.value = "";
-            mailAccessStatus.textContent = "Access denied!";
         }
     }
+
+    mailInput.value = "";
     console.log(isMailFound);
+
+    if(isMailFound === true) {
+        mailAccessStatus.textContent = "Access allowed!";
+    }
+    else{
+        mailAccessStatus.textContent = "Access denied!";
+    }
 });
