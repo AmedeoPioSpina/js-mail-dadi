@@ -15,6 +15,7 @@ btn.addEventListener("click", (e) => {
     for(let i = 0; i < mailList.length; i++){
         if( mailInput.value === mailList[i]){
             isMailFound = true;
+            break;
         }
     }
 
